@@ -43,13 +43,14 @@ public class ManagementOnSchoolsPageUs03_04 {
     @FindBy(css = ".Toastify__toast-body")
     public WebElement assertName;
 
-    @FindBy(xpath = "//*[@class='Toastify__toast-container Toastify__toast-container--top-center']")
+    @FindBy(css = "div[class='Toastify__toast-container Toastify__toast-container--top-center']")
     public WebElement assertEmail;
+    //@FindBy(css = "span[class='wcicon-status-completed']")
 
-    @FindBy(xpath = "//*[@id=\"27\"]")
+    @FindBy(xpath = "//*[@class='Toastify__toast-container Toastify__toast-container--top-center']")
     public WebElement assertSubject;
 
-    @FindBy(css = ".Toastify__toast-body")//class
+    @FindBy(css = "//div[text()='Your subject should be at least 4 characters']")
     public WebElement assertMessage;
 
 
