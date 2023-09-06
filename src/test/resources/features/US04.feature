@@ -47,7 +47,7 @@ Feature: US04 Managementshcool Sayfasi Testi
     Then : Kullanıcı Password "<Password>" bilgilerini yazar
     Then : Kullanıcı Submit Buttonuna tıklar
     Then : Kullanıcı çıkan hata mesajının göründüğünü doğrula
-    And  : Sayfayı kapatır
+    And  : Sayfayı kapatırg
     Examples:
       | Name | Surname | User Name  | Phone      | SSN no    | Password |
       | Dean | Team    | DeanTeam06 | 5385283344 | 123555666 | Team0612 |
