@@ -38,7 +38,8 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
     @Then("User Name  ve password bilgilerini gir")
     public void userNameVePasswordBilgileriniGir() {
         managementOnSchools.username.sendKeys("DeanTeam06", Keys.TAB, "Team0612");
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
+
     }
 
     @Then("Login'e tıkla")
@@ -56,6 +57,7 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
     public void kullanıcıYourEmailKısmınaBilgileriYazar(String string) {
         managementOnSchools.yourEmail.sendKeys(string);
         ReusableMethods.bekle(2);
+
     }
 
     @Then(": Kullanıcı Subject {string} kısmına bilgileri yazar")
@@ -81,6 +83,7 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
     public void yazısınınGoruldugunuDogrula(String string) {
         Assert.assertTrue(managementOnSchools.assertName.getText().contains(string));
         ReusableMethods.bekle(2);
+
     }
 
     @And(": Sayfayı kapatır")
@@ -92,6 +95,7 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
     public void yazısınınYourEmailKısmıIcinGoruldugunuDogrula(String string) {
         Assert.assertTrue(managementOnSchools.assertEmail.isDisplayed());
         ReusableMethods.bekle(2);
+
     }
 
     @Then(": {string} yazısının her iki kısım için görüldüğünü doğrula.")
@@ -100,81 +104,9 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
        // ReusableMethods.bekle(2);
        // Assert.assertTrue(managementOnSchools.assertMessage.isDisplayed());
        // ReusableMethods.bekle(2);
-    }
-
-    @Then("Admin User Name  ve Admin password bilgilerini gir")
-    public void adminUserNameVeAdminPasswordBilgileriniGir() {
 
     }
-    @Then("Sol tarafta açılan {string} kısmına tıklar")
-    public void solTaraftaAcılanKısmınaTıklar(String arg0) {
-        managementOnSchools.menuButton.click();
-        managementOnSchools.adminManagement.click();
-    }
 
-    @Given(": Kullanıcı Name {string} kısmına bilgileri yazar")
-    public void kullanıcıNameKısmınaBilgileriYazar(String arg0) {
-    }
 
-    @Then(": Kullanıcı Surname {string} kısmına bilgileri yazar")
-    public void kullanıcıSurnameKısmınaBilgileriYazar(String arg0) {
-    }
 
-    @Then(": Kullanıcı BirthPlace kısmına bilgileri yazar")
-    public void kullanıcıBirthPlaceKısmınaBilgileriYazar() {
-    }
-
-    @Then(": Gender kısmında cinsiyet seçili olmadığını gör")
-    public void genderKısmındaCinsiyetSeciliOlmadıgınıGor() {
-    }
-
-    @Then(": Gender Kısmında cinsiyet seçimini yap")
-    public void genderKısmındaCinsiyetSeciminiYap() {
-    }
-
-    @Then(": Kullanıcı Doğum Tarihi seçer")
-    public void kullanıcıDogumTarihiSecer() {
-    }
-
-    @Then(": Kullanıcı Phone {string} bilglerini yazar")
-    public void kullanıcıPhoneBilgleriniYazar(String arg0) {
-    }
-
-    @Then(": Kullanıcı SSN no {string} bilgilerini yazar")
-    public void kullanıcıSSNNoBilgileriniYazar(String arg0) {
-    }
-
-    @Then(": Kullanıcı User Name {string} bilgilerini yazar")
-    public void kullanıcıUserNameBilgileriniYazar(String arg0) {
-    }
-
-    @Then(": Kullanıcı Password {string} bilgilerini yazar")
-    public void kullanıcıPasswordBilgileriniYazar(String arg0) {
-    }
-
-    @Then(": Kullanıcı Submit Buttonuna tıklar")
-    public void kullanıcıSubmitButtonunaTıklar() {
-    }
-
-    @Then(": Kullanıcı Başarı ile Dean kayıt edildiği mesajınının görüldüğünü doğrula")
-    public void kullanıcıBasarıIleDeanKayıtEdildigiMesajınınınGoruldugunuDogrula() {
-    }
-
-    @Then(": Kullanıcı Phone {string} bilglerini rakamlar arasında {string} işareti olmadan yazar")
-    public void kullanıcıPhoneBilgleriniRakamlarArasındaIsaretiOlmadanYazar(String arg0) {
-    }
-
-    @Then(": Kullanıcı SSN no {string} bilglerini rakamlar arasında {string} işareti olmadan yazar")
-    public void kullanıcıSSNNoBilgleriniRakamlarArasındaIsaretiOlmadanYazar(String arg0) {
-    }
-
-    @Then(": Kullanıcı çıkan hata mesajının göründüğünü doğrula")
-    public void kullanıcıCıkanHataMesajınınGorundugunuDogrula() {
-    }
-
-    @Then("us gir pas gir")
-    public void usGirPasGir() {
-        managementOnSchools.username.sendKeys("AdminBatch151 ", Keys.TAB, "Batch151+");
-        ReusableMethods.bekle(2);
-    }
 }

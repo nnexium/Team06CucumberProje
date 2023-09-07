@@ -27,6 +27,7 @@ public class ManagementOnSchoolsPageUs03_04 {
     @FindBy(xpath = "//*[@placeholder='Name']")
     public WebElement yourName;
 
+
     @FindBy(xpath = "//*[@placeholder='Email']")
     public WebElement yourEmail;
 
@@ -49,23 +50,8 @@ public class ManagementOnSchoolsPageUs03_04 {
     @FindBy(xpath = "//*[@class='Toastify__toast-container Toastify__toast-container--top-center']")
     public WebElement assertSubject;
 
-    @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
-    public WebElement menuButton;
-
-    @FindBy(css = "(//*[@class='nav-link'])[6]")
-    public WebElement adminManagement;
-
-    @FindBy(css = "//*[@class='form-control is-invalid']")
-    public WebElement adminuser;
-
     @FindBy(css = "//div[text()='Your subject should be at least 4 characters']")
-    public WebElement assertMessage3;
-
-    @FindBy(css = "//div[text()='Your subject should be at least 4 characters']")
-    public WebElement assertMessage4;
-
-    @FindBy(css = "//div[text()='Your subject should be at least 4 characters']")
-    public WebElement assertMessage5;
+    public WebElement assertMessage;
 
 
 
