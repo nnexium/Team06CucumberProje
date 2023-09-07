@@ -20,7 +20,7 @@ public class ManagementOnSchoolsPageUs01_02 {
     @FindBy(xpath = "//input[@id='birthPlace']")
     public WebElement birthPlaceKutusu;
 
-    @FindBy(xpath = "//input[@id='phoneNumber']")
+    @FindBy(xpath = "//input[@placeholder='Phone Number']")
     public WebElement phoneNumberKutusu;
 
     @FindBy(xpath = "//label[normalize-space()='Gender']")
@@ -52,6 +52,35 @@ public class ManagementOnSchoolsPageUs01_02 {
 
     @FindBy(xpath = "//input[@id='password']")
     public WebElement loginPassword;
+
+    @FindBy(xpath = "//input[@value='MALE']")
+    public WebElement maleButton;
+    @FindBy(xpath = "//input[@value='FEMALE']")
+    public WebElement femaleButton;
+    @FindBy(xpath = "//button[@class='fw-semibold btn btn-primary']")
+    public WebElement loginGiris;
+
+    @FindBy(xpath = "//button[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
+    public WebElement menuButonu;
+
+    @FindBy(xpath = "//a[text()='Guest User']")
+    public WebElement guestUserButonu;
+
+    @FindBy(xpath = "//div[text()='Required']")
+    public WebElement verifyRequired;
+
+
+
+    //@FindBy(xpath = "//a[text()='Guest User']")
+   // public WebElement guestUserButonu;
+
+    //th
+
+
+
+
+
+
 
 
 
