@@ -39,7 +39,8 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
     @Then("User Name  ve password bilgilerini gir")
     public void userNameVePasswordBilgileriniGir() {
         managementOnSchools.username.sendKeys("DeanTeam06", Keys.TAB, "Team0612");
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
+
     }
 
     @Then("Login'e tıkla")
@@ -58,6 +59,7 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
     public void kullanıcıYourEmailKısmınaBilgileriYazar(String string) {
         managementOnSchools.yourEmail.sendKeys(string);
         ReusableMethods.bekle(2);
+
     }
 
     @Then(": Kullanıcı Subject {string} kısmına bilgileri yazar")
@@ -83,6 +85,7 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
     public void yazısınınGoruldugunuDogrula(String string) {
         Assert.assertTrue(managementOnSchools.assertName.getText().contains(string));
         ReusableMethods.bekle(2);
+
     }
 
     @And(": Sayfayı kapatır")
@@ -94,6 +97,7 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
     public void yazısınınYourEmailKısmıIcinGoruldugunuDogrula(String string) {
         Assert.assertTrue(managementOnSchools.assertEmail.isDisplayed());
         ReusableMethods.bekle(2);
+
     }
 
     @Then(": {string} yazısının her iki kısım için görüldüğünü doğrula.")
@@ -102,6 +106,7 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
        // ReusableMethods.bekle(2);
        // Assert.assertTrue(managementOnSchools.assertMessage.isDisplayed());
        // ReusableMethods.bekle(2);
+
     }
 
     @Then("Admin User Name  ve Admin password bilgilerini gir")
@@ -210,4 +215,11 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
         ReusableMethods.click(managementOnSchools.menuButton);
         ReusableMethods.bekle(4);
     }
+
+
+    }
+
+
+
+
 }
