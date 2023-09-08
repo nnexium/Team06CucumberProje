@@ -2,14 +2,16 @@
   Feature:US_08_ViceDean_Ders_Olusturabilmelidir
     Background: ViceDean Ders Olusturabilmeli
       Given Kullanici anasayfaya gider
+      And  Kullanici 1 saniye bekler
       When Login kutusuna tiklar
+      And  Kullanici 1 saniye bekler
       Then  UserName kutusuna "viceDeanUserName" yazar
-      And  Kullanici 2 saniye bekler
+      And  Kullanici 1 saniye bekler
       Then Password kutusuna "viceDeanSifre" yazar
-      And  Kullanici 2 saniye bekler
+      And  Kullanici 1 saniye bekler
       Then Login butonuna tiklar
       Then Kullanici anasayfada "Hi ViceDeanTeam06" yazisini görür
-      And  Kullanici 2 saniye bekler
+      And  Kullanici 1 saniye bekler
       And Kullanici Lessons butonunu tiklar
       And Kullanici "Lesson Management" yazisini gorur
 
