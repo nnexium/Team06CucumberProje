@@ -14,7 +14,7 @@ public class Hooks {
         System.out.println("Scenariolar calismaya basladi");
     }
 
-    @After
+  //  @After
     public void tearDown(Scenario scenario) throws Exception {
         if (scenario.isFailed()) {
             TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();

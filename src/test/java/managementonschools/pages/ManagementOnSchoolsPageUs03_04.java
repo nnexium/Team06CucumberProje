@@ -4,6 +4,7 @@ import managementonschools.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.ElementClickInterceptedException;
 
 public class ManagementOnSchoolsPageUs03_04 {
 
@@ -50,8 +51,46 @@ public class ManagementOnSchoolsPageUs03_04 {
     @FindBy(xpath = "//*[@class='Toastify__toast-container Toastify__toast-container--top-center']")
     public WebElement assertSubject;
 
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/header/div[1]/div/div/div/nav/button")
+    public WebElement menuButton;
+
+    @FindBy(xpath = "(//*[@class='nav-link'])[7]")//
+    public WebElement deanEnter;
+
+    @FindBy(xpath = "//*[@id='username']")
+    public WebElement enter;
+
+    @FindBy(xpath = "//*[@id='name']")
+    public WebElement nameEnter;
+
+    @FindBy(xpath= "(//*[@type='radio'])[1]")
+    public WebElement femaleGender;
+
+    @FindBy(xpath= "(//*[@type='radio'])[2]")
+    public WebElement maleGender;
+
+    @FindBy(xpath= "(//*[@id='birthDay'])")
+    public WebElement birthDayselect;
+
+    @FindBy(xpath= "//*[@id='phoneNumber']")
+    public WebElement phoneNumber;
+
+    @FindBy(xpath= "//*[@id='ssn']")
+    public WebElement ssnNumber;
+
+    @FindBy(xpath= "//*[@id='username']")
+    public WebElement UserName;
+
+    @FindBy(xpath= "//*[@id='password']")
+    public WebElement password;
+
+    @FindBy(xpath= "//*[@class='fw-semibold btn btn-primary btn-lg']")
+    public WebElement submitButton;
+
     @FindBy(css = "//div[text()='Your subject should be at least 4 characters']")
     public WebElement assertMessage;
+
 
 
 
