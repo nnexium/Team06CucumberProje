@@ -8,7 +8,7 @@ import managementonschools.pages.ManagementOnSchoolsPageUs03_04;
 import managementonschools.utilities.ConfigReader;
 import managementonschools.utilities.Driver;
 import managementonschools.utilities.ReusableMethods;
-import org.apache.poi.ss.formula.functions.T;t
+import org.apache.poi.ss.formula.functions.T;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 

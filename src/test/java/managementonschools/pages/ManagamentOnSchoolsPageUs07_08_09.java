@@ -68,6 +68,33 @@ public class ManagamentOnSchoolsPageUs07_08_09 {
     @FindBy(xpath = "//h3[text()='Lesson Management']")
     public WebElement lessonManagementYazisi;
 
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]")
+    public WebElement lessonNameResquiredMesaji;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[6]")
+    public WebElement creditScoreRequiredMesaji;
+
+    @FindBy(xpath = "(//h5[@class='fw-bold p-3 card-header'])[1]")
+    public WebElement lessonList;
+
+    @FindBy(xpath = "(//span[@aria-hidden='true'])[1]")
+    public WebElement listeSonuButonu;
+
+    @FindBy(xpath = "//th[text()='Lesson Name']")
+    public WebElement lessonName;
+
+    @FindBy(xpath = "//th[text()='Compulsory']")
+    public WebElement compulsory;
+
+    @FindBy(xpath = "//th[text()='Credit Score']")
+    public WebElement creditScore;
+
+    @FindBy(xpath = "(//button[@class='btn btn-danger'])[1]")
+    public WebElement deleteButonu;
+
+    @FindBy(xpath = "//div[æclass='Toastify__toast-body']")
+    public WebElement lessonDeletedMesaji;
+
 
 
 

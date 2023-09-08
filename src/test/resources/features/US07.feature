@@ -11,3 +11,4 @@ Feature: US07_Dean_Kullanıcıların_Gönderdiği_Mesajları_Görebilmelidir
     And Kullanici Contact Get All butonunu tiklar
     And Kullanici gönderilen mesajları görür
     And Kullanici Silme butonu göremez ve silme işlemini yapamaz
+    And Kullanici sayfayi kapatir

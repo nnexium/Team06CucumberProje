@@ -1,6 +1,7 @@
 package managementonschools.stepDefinition;
 
 import com.github.javafaker.Faker;
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.But;
 import io.cucumber.java.en.Given;
@@ -10,7 +11,13 @@ import managementonschools.utilities.ConfigReader;
 import managementonschools.utilities.Driver;
 import managementonschools.utilities.ReusableMethods;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.Random;
 
 public class ManagementOnSchoolStepDefinitionUs07_08_09 {
@@ -93,9 +100,13 @@ public class ManagementOnSchoolStepDefinitionUs07_08_09 {
 
     @And("Kullanici Lesson Name kutusuna {string} yazar")
     public void kullaniciLessonNameKutusunaYazar(String arg0) {
-        Faker faker = new Faker();
-       // String lessonName = faker.name().toString();
-        managamentOnSchoolsPageUs070809.lessonNameKutusu.sendKeys(faker.name().firstName());
+        if (arg0.equals("lessonName")) {
+            Faker faker = new Faker();
+            // String lessonName = faker.name().toString();
+            managamentOnSchoolsPageUs070809.lessonNameKutusu.sendKeys(faker.name().firstName());
+        } else {
+            managamentOnSchoolsPageUs070809.lessonNameKutusu.sendKeys("");
+        }
     }
 
 
@@ -106,11 +117,16 @@ public class ManagementOnSchoolStepDefinitionUs07_08_09 {
 
     @And("Kullanici Credit Score butonuna {string} yazar")
     public void kullaniciCreditScoreButonunaYazar(String arg0) {
-        Random random = new Random();
-        int min = 1;
-        int max = 20;
-        String creditScore = String.valueOf(random.nextInt(max - min + 1) + min);
-        managamentOnSchoolsPageUs070809.creditScoreKutusu.sendKeys(creditScore);
+        if (arg0.equals("creditScore")) {
+            Random random = new Random();
+            int min = 1;
+            int max = 20;
+            String creditScore = String.valueOf(random.nextInt(max - min + 1) + min);
+            managamentOnSchoolsPageUs070809.creditScoreKutusu.sendKeys(creditScore);
+        } else {
+
+            managamentOnSchoolsPageUs070809.creditScoreKutusu.sendKeys("");
+        }
     }
 
 
@@ -120,7 +136,7 @@ public class ManagementOnSchoolStepDefinitionUs07_08_09 {
 
     }
 
-    @But("Kullanici {int}sn bekler")
+    @And("Kullanici {int}sn bekler")
     public void kullaniciSnBekler(int arg0) {
         ReusableMethods.bekle(2);
     }
@@ -137,17 +153,55 @@ public class ManagementOnSchoolStepDefinitionUs07_08_09 {
 
     }
 
-    @And("Kullanici Lesson Name kutusunu bos birakir")
-    public void kullaniciLessonNameKutusunuBosBirakir() {
-        managamentOnSchoolsPageUs070809.lessonNameKutusu.sendKeys(null);
-    }
 
     @And("Kullanici Compulsory butonunu bos birakir")
     public void kullaniciCompulsoryButonunuBosBirakir() {
-        managamentOnSchoolsPageUs070809.compulsoryButonu.sendKeys(null);
+
     }
 
     @And("Kullanici Lesson Name kutusunun altindaki {string} yazisini gorur")
     public void kullaniciLessonNameKutusununAltindakiYazisiniGorur(String arg0) {
+        Assert.assertTrue(managamentOnSchoolsPageUs070809.lessonNameResquiredMesaji.isDisplayed());
     }
+
+    @And("Kullanici Credit Score kutusunun altindaki {string} yazisini gorur")
+    public void kullaniciCreditScoreKutusununAltindakiYazisiniGorur(String arg0) {
+        Assert.assertTrue(managamentOnSchoolsPageUs070809.creditScoreRequiredMesaji.isDisplayed());
+
+    }
+
+    @And("Kullanici sayfayi assagi kaydirip Lesson List i gorur")
+    public void kullaniciSayfayiAssagiKaydiripLessonListIGorur() {
+     ReusableMethods.scroll(managamentOnSchoolsPageUs070809.lessonList);
+
+    }
+
+    @And("Kullanici sayfayi assagi kaydirip >>butonuna tiklar")
+    public void kullaniciSayfayiAssagiKaydiripButonunaTiklar() {
+        ReusableMethods.scroll(managamentOnSchoolsPageUs070809.listeSonuButonu);
+        managamentOnSchoolsPageUs070809.listeSonuButonu.click();
+    }
+
+    @And("Kullanici Lesson Name,Credit Score ve Compulsory gorur")
+    public void kullaniciLessonNameCreditScoreVeCompulsoryGorur() {
+     Assert.assertTrue(managamentOnSchoolsPageUs070809.lessonName.isDisplayed());
+     Assert.assertTrue(managamentOnSchoolsPageUs070809.compulsory.isDisplayed());
+     Assert.assertTrue(managamentOnSchoolsPageUs070809.creditScore.isDisplayed());
+    }
+        @And("Kullanici Delete butonunu gorur ve tiklar")
+    public void kullaniciDeleteButonunuGorurVeTiklar() {
+        Assert.assertTrue(managamentOnSchoolsPageUs070809.deleteButonu.isDisplayed());
+        managamentOnSchoolsPageUs070809.deleteButonu.click();
+    }
+
+    @And("Kullanici {string} mesajini gorur")
+    public void kullaniciMesajiniGorur(String arg0) {
+        Assert.assertTrue(managamentOnSchoolsPageUs070809.lessonDeletedMesaji.isDisplayed());
+    }
+
+    @And("Kullanici ders bilgilerini guncelle butonunu goremez ve ders bilgilerini guncelleyemez")
+    public void kullaniciDersBilgileriniGuncelleButonunuGoremezVeDersBilgileriniGuncelleyemez() {
+
+    }
+
 }
