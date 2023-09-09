@@ -1,16 +1,20 @@
 package managementonschools.stepDefinition;
 
+import com.github.javafaker.DateAndTime;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.it.Date;
 import managementonschools.pages.ManagementOnSchoolsPageUs01_02;
 import managementonschools.utilities.ConfigReader;
 import managementonschools.utilities.Driver;
 import managementonschools.utilities.ReusableMethods;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+
+import java.security.Key;
 
 public class ManagementOnSchoolsStepDefinitionUs01_02 {
     Faker faker = new Faker();
@@ -30,14 +34,14 @@ public class ManagementOnSchoolsStepDefinitionUs01_02 {
 
 
     @When("Girer name {string}, surname {string},birth_place {string}, phone_number {string},gender {string}, birth_day {string},ssn {string},username {string},password{string}")
-    public void girerNameSurnameBirth_placePhone_numberGenderBirth_daySsnUsernamePassword(String name, String surname, String birth_place, String phone_number, String gender, String birth_day, String ssn, String username, String password) {
+    public  void girerNameSurnameBirth_placePhone_numberGenderBirth_daySsnUsernamePassword(String name, String surname, String birth_place, String phone_number, String gender, String birth_day, String ssn, String username, String password) {
         name = faker.name().firstName();
         surname = faker.name().lastName();
         birth_place = faker.nation().capitalCity();
 
         gender = faker.dog().gender();
         phone_number = faker.number().numberBetween(100, 999) + " " + faker.number().numberBetween(100, 999) + " " + faker.number().numberBetween(1000, 9999);
-        birth_day =""+ faker.date();
+        birth_day = faker.number().numberBetween(01, 28) + "." + faker.number().numberBetween(01, 12) + "." + faker.number().numberBetween(1950, 2004);
         ssn = faker.idNumber().ssnValid();
         username = faker.name().username();
         password = faker.internet().password();
@@ -49,7 +53,9 @@ public class ManagementOnSchoolsStepDefinitionUs01_02 {
         pages0102.birthPlaceKutusu.sendKeys(birth_place);
         pages0102.phoneNumberKutusu.sendKeys(phone_number);
 
+
         if (gender.equalsIgnoreCase("male")) {
+
             pages0102.maleButton.click();
         } else {
             pages0102.femaleButton.click();
@@ -114,13 +120,19 @@ public class ManagementOnSchoolsStepDefinitionUs01_02 {
 
     @Then("Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini görünür olduğunu doğrular")
     public void adminGuestUserListNamePhoneNumberSSNUserNameBilgileriniGorunurOldugunuDogrular() {
+        assert pages0102.verifyListTitle.isDisplayed();
 
 
     }
 
     @And("Admin silme işlemi için, Guest User List de, Name, Phone Number, SSN, User Name in olduğu tabloda {string} işaretini tıklar")
     public void adminSilmeIslemiIcinGuestUserListDeNamePhoneNumberSSNUserNameInOlduguTablodaIsaretiniTıklar(String arg0) {
+
+
+
     }
+
+
 
     @Then("Admin {string} yazısının görünür olduğunu doğrular")
     public void adminYazısınınGorunurOldugunuDogrular(String arg0) {
@@ -155,34 +167,157 @@ public class ManagementOnSchoolsStepDefinitionUs01_02 {
     }
 
 
-    @When("Name alani boş kalir , name {string}, surname {string},birth_place {string}, phone_number {string},gender {string}, birth_day {string},ssn {string},username {string},password{string}")
-    public void nameAlaniBosKalirNameSurnameBirth_placePhone_numberGenderBirth_daySsnUsernamePassword(String name, String surname, String birth_place, String phone_number, String gender, String birth_day, String ssn, String username, String password) {
-        //name = faker.name().firstName();
+    @When("Name alani boş kalir , surname {string},birth_place {string}, phone_number {string},gender {string}, birth_day {string},ssn {string},username {string},password{string}")
+    public void nameAlaniBosKalirNameSurnameBirth_placePhone_numberGenderBirth_daySsnUsernamePassword(String surname, String birth_place, String phone_number, String gender, String birth_day, String ssn, String username, String password) {
+        // name = "";
+
+
         surname = faker.name().lastName();
         birth_place = faker.nation().capitalCity();
-
-        gender = faker.dog().gender();
+        gender=faker.dog().gender();
         phone_number = faker.number().numberBetween(100, 999) + " " + faker.number().numberBetween(100, 999) + " " + faker.number().numberBetween(1000, 9999);
-        birth_day =""+ faker.date();
+
+
+        birth_day = faker.number().numberBetween(01, 28) + "." + faker.number().numberBetween(01, 12) + "." + faker.number().numberBetween(1950, 2004);
         ssn = faker.idNumber().ssnValid();
         username = faker.name().username();
         password = faker.internet().password();
         password = password + "@Ak47!?";
 
 
-        pages0102.nameKutusu.sendKeys(" ");
+
+
+
+
+// pages0102.nameKutusu.sendKeys("");
         pages0102.surnameKutusu.sendKeys(surname);
         pages0102.birthPlaceKutusu.sendKeys(birth_place);
         pages0102.phoneNumberKutusu.sendKeys(phone_number);
 
-        if (gender.equalsIgnoreCase("male")) {
-            pages0102.maleButton.click();
+
+        if (gender.equalsIgnoreCase("female")) {
+            pages0102.femaleButton.sendKeys(Keys.SPACE);
         } else {
-            pages0102.femaleButton.click();
+            pages0102.maleButton.sendKeys(Keys.SPACE);
+        }
+
+
+        pages0102.birthDayKutusu.sendKeys(birth_day);
+        pages0102.ssnKutusu.sendKeys(ssn);
+        pages0102.usernameKutusu.sendKeys(username);
+        pages0102.passwordKutusu.sendKeys(password);
+
+
+    }
+
+
+    @When("Surname alani bos kalir name {string}, birth_place {string}, phone_number {string},gender {string}, birth_day {string},ssn {string},username {string},password{string}")
+    public void surnameAlaniBosKalirNameBirth_placePhone_numberGenderBirth_daySsnUsernamePassword(String name, String birth_place, String phone_number, String gender, String birth_day, String ssn, String username, String password) {
+        name = faker.name().firstName();
+        //surname = faker.name().lastName();
+        birth_place = faker.nation().capitalCity();
+
+        gender = faker.dog().gender();
+        phone_number = faker.number().numberBetween(100, 999) + " " + faker.number().numberBetween(100, 999) + " " + faker.number().numberBetween(1000, 9999);
+        birth_day = faker.number().numberBetween(01, 28) + "." + faker.number().numberBetween(01, 12) + "." + faker.number().numberBetween(1950, 2004);
+        ssn = faker.idNumber().ssnValid();
+        username = faker.name().username();
+        password = faker.internet().password();
+        password = password + "@Ak47!?";
+
+
+        pages0102.nameKutusu.sendKeys(name);
+        // pages0102.surnameKutusu.sendKeys(surname);
+        pages0102.birthPlaceKutusu.sendKeys(birth_place);
+        pages0102.phoneNumberKutusu.sendKeys(phone_number);
+
+        if (gender.equalsIgnoreCase("female")) {
+            pages0102.femaleButton.sendKeys(Keys.SPACE);
+        } else {
+            pages0102.maleButton.sendKeys(Keys.SPACE);
         }
 
         pages0102.birthDayKutusu.sendKeys(birth_day);
         pages0102.ssnKutusu.sendKeys(ssn);
         pages0102.usernameKutusu.sendKeys(username);
-        pages0102.passwordKutusu.sendKeys(password);}
+        pages0102.passwordKutusu.sendKeys(password);
+
+
+    }
+
+    @When("Birth place alani bos kalir name {string}, surname {string}, phone_number {string},gender {string}, birth_day {string},ssn {string},username {string},password{string}")
+    public void birthPlaceAlaniBosKalirNameSurnamePhone_numberGenderBirth_daySsnUsernamePassword(String name, String surname, String phone_number, String gender, String birth_day, String ssn, String username, String password) {
+        name = faker.name().firstName();
+        surname = faker.name().lastName();
+        // birth_place = faker.nation().capitalCity();
+
+        gender = faker.dog().gender();
+        phone_number = faker.number().numberBetween(100, 999) + " " + faker.number().numberBetween(100, 999) + " " + faker.number().numberBetween(1000, 9999);
+        birth_day = faker.number().numberBetween(01, 28) + "." + faker.number().numberBetween(01, 12) + "." + faker.number().numberBetween(1950, 2004);
+        ssn = faker.idNumber().ssnValid();
+        username = faker.name().username();
+        password = faker.internet().password();
+        password = password + "@Ak47!?";
+
+
+        pages0102.nameKutusu.sendKeys(name);
+        pages0102.surnameKutusu.sendKeys(surname);
+        //pages0102.birthPlaceKutusu.sendKeys(birth_place);
+        pages0102.phoneNumberKutusu.sendKeys(phone_number);
+
+        if (gender.equalsIgnoreCase("female")) {
+            pages0102.femaleButton.sendKeys(Keys.SPACE);
+        } else {
+            pages0102.maleButton.sendKeys(Keys.SPACE);
+        }
+
+        pages0102.birthDayKutusu.sendKeys(birth_day);
+        pages0102.ssnKutusu.sendKeys(ssn);
+        pages0102.usernameKutusu.sendKeys(username);
+        pages0102.passwordKutusu.sendKeys(password);
+
+
+    }
+
+
+    @When("Kullanici 'SSN' alanina '-' icermeyen ve onbir rakamdan oluşan değerleri girer. name {string}, surname {string},birth_place {string}, phone_number {string},gender {string}, birth_day {string} ,ssn {string},username {string},password{string}")
+    public void kullaniciAlaninaIceremeyenVeRakamdanOlusanDegerleriGirerNameSurnameBirth_placePhone_numberGenderBirth_daySsnUsernamePassword(String name, String surname, String birth_place, String phone_number, String gender, String birth_day, String ssn, String username, String password) {
+        name = faker.name().firstName();
+        surname = faker.name().lastName();
+        birth_place = faker.nation().capitalCity();
+
+        gender = faker.dog().gender();
+        phone_number = faker.number().numberBetween(100, 999) + " " + faker.number().numberBetween(100, 999) + " " + faker.number().numberBetween(1000, 9999);
+        birth_day = faker.number().numberBetween(01, 28) + "." + faker.number().numberBetween(01, 12) + "." + faker.number().numberBetween(1950, 2004);
+        ssn = faker.number().digits(11);
+        username = faker.name().username();
+        password = faker.internet().password();
+        password = password + "@Ak47!?";
+
+
+        pages0102.nameKutusu.sendKeys(name);
+        pages0102.surnameKutusu.sendKeys(surname);
+        pages0102.birthPlaceKutusu.sendKeys(birth_place);
+        pages0102.phoneNumberKutusu.sendKeys(phone_number);
+
+        if (gender.equalsIgnoreCase("female")) {
+            pages0102.femaleButton.sendKeys(Keys.SPACE);
+        } else {
+            pages0102.maleButton.sendKeys(Keys.SPACE);
+        }
+
+        pages0102.birthDayKutusu.sendKeys(birth_day);
+        pages0102.ssnKutusu.sendKeys(ssn);
+        pages0102.usernameKutusu.sendKeys(username);
+        pages0102.passwordKutusu.sendKeys(password);
+
+    }
+
+
+    @And("{string} yazisi görüldügünü dogrula")
+    public void pleaseEnterValidSSNNumberYazisiGoruldugunuDogrula(String ssn) {
+        assert Driver.getDriver().switchTo().alert().getText().contains(ssn);
+
+    }
 }
+
