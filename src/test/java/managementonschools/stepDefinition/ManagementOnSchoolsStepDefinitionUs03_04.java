@@ -123,10 +123,6 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
     }
 
 
-
-
-
-
     @Then(": Kullanıcı BirthPlace kısmına bilgileri yazar")
     public void kullanıcıBirthPlaceKısmınaBilgileriYazar() {
 
@@ -212,5 +208,5 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
         ReusableMethods.click(managementOnSchools.menuButton);
         ReusableMethods.bekle(4);
     }
-
+>>>>>>>>> Temporary merge branch 2
 }

@@ -69,12 +69,27 @@ public class ManagementOnSchoolsPageUs01_02 {
     @FindBy(xpath = "//div[text()='Required']")
     public WebElement verifyRequired;
 
+    @FindBy(xpath = "//div[text()='Please enter valid SSN number']")
+    public WebElement verifySsn;
+
+    @FindBy(xpath = "//th")
+    public WebElement verifyListTitle;
+
+    @FindBy(xpath = "(//button)[5]")
+    public WebElement deleteButonu;
+
+    @FindBy(xpath = "//.[text()='Guest User deleted Successful']")
+    public WebElement verifyDelete;
 
 
-    //@FindBy(xpath = "//a[text()='Guest User']")
-   // public WebElement guestUserButonu;
 
-    //th
+
+
+
+
+
+
+
 
 
 
