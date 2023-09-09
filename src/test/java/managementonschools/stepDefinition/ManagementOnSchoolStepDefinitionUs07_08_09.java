@@ -12,6 +12,7 @@ import managementonschools.utilities.Driver;
 import managementonschools.utilities.ReusableMethods;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -88,7 +89,9 @@ public class ManagementOnSchoolStepDefinitionUs07_08_09 {
 
     @And("Kullanici Silme butonu göremez ve silme işlemini yapamaz")
     public void kullaniciSilmeButonuGöremezVeSilmeIşleminiYapamaz() {
-        ReusableMethods.tumSayfaResmi("managementonschoolsUrl");
+        String name = "Kullanici Silme butonu göremez ve silme işlemini yapamaz";
+        ReusableMethods.tumSayfaResmi(name);
+
 
     }
 
@@ -102,18 +105,21 @@ public class ManagementOnSchoolStepDefinitionUs07_08_09 {
     public void kullaniciLessonNameKutusunaYazar(String arg0) {
         if (arg0.equals("lessonName")) {
             Faker faker = new Faker();
-            // String lessonName = faker.name().toString();
             managamentOnSchoolsPageUs070809.lessonNameKutusu.sendKeys(faker.name().firstName());
         } else {
             managamentOnSchoolsPageUs070809.lessonNameKutusu.sendKeys("");
         }
     }
+    @And("Kullanici Compulsory butonunu {string}")
+    public void kullaniciCompulsoryButonunu(String arg0) {
+        if (arg0.equals("isaretler")){
+            managamentOnSchoolsPageUs070809.compulsory.click();
+        }
+        else {
 
-
-    @And("Kullanici Compulsory butonunu isaretler")
-    public void kullaniciCompulsoryButonunuIsaretler() {
-        managamentOnSchoolsPageUs070809.compulsoryButonu.click();
+        }
     }
+
 
     @And("Kullanici Credit Score butonuna {string} yazar")
     public void kullaniciCreditScoreButonunaYazar(String arg0) {
@@ -144,6 +150,9 @@ public class ManagementOnSchoolStepDefinitionUs07_08_09 {
     @And("Kullanici {string} yazisini görür")
     public void kullaniciYazisiniGörür(String arg0) {
         Assert.assertTrue(managamentOnSchoolsPageUs070809.lessonCreatedMesaji.isDisplayed());
+
+        String name = "Kullanıcı 'Lesson Created' mesajını görür";
+        ReusableMethods.tumSayfaResmi(name);
     }
 
 
@@ -154,44 +163,61 @@ public class ManagementOnSchoolStepDefinitionUs07_08_09 {
     }
 
 
-    @And("Kullanici Compulsory butonunu bos birakir")
-    public void kullaniciCompulsoryButonunuBosBirakir() {
-
-    }
-
     @And("Kullanici Lesson Name kutusunun altindaki {string} yazisini gorur")
     public void kullaniciLessonNameKutusununAltindakiYazisiniGorur(String arg0) {
         Assert.assertTrue(managamentOnSchoolsPageUs070809.lessonNameResquiredMesaji.isDisplayed());
+
+        String name = "Kullanıcı Lesson Name kutusunu boş bırakamaz";
+        ReusableMethods.tumSayfaResmi(name);
     }
 
     @And("Kullanici Credit Score kutusunun altindaki {string} yazisini gorur")
     public void kullaniciCreditScoreKutusununAltindakiYazisiniGorur(String arg0) {
         Assert.assertTrue(managamentOnSchoolsPageUs070809.creditScoreRequiredMesaji.isDisplayed());
 
+        String name = "Kullanıcı Credit Score kutusunu boş bırakamaz";
+        ReusableMethods.tumSayfaResmi(name);
+
     }
 
     @And("Kullanici sayfayi assagi kaydirip Lesson List i gorur")
     public void kullaniciSayfayiAssagiKaydiripLessonListIGorur() {
-     ReusableMethods.scroll(managamentOnSchoolsPageUs070809.lessonList);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.scrollByAmount(1,200);
+        actions.perform();
 
+      //  Assert.assertTrue(managamentOnSchoolsPageUs070809.lessonList.isDisplayed());
+
+
+
+    }
+    @And("Kullanici Lesson Name,Credit Score ve Compulsory gorur")
+    public void kullaniciLessonNameCreditScoreVeCompulsoryGorur() {
+        Assert.assertTrue(managamentOnSchoolsPageUs070809.lessonName.isDisplayed());
+        Assert.assertTrue(managamentOnSchoolsPageUs070809.compulsory.isDisplayed());
+        Assert.assertTrue(managamentOnSchoolsPageUs070809.creditScore.isDisplayed());
     }
 
     @And("Kullanici sayfayi assagi kaydirip >>butonuna tiklar")
     public void kullaniciSayfayiAssagiKaydiripButonunaTiklar() {
-        ReusableMethods.scroll(managamentOnSchoolsPageUs070809.listeSonuButonu);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.scrollByAmount(1,1000);
+        actions.perform();
+
         managamentOnSchoolsPageUs070809.listeSonuButonu.click();
     }
 
-    @And("Kullanici Lesson Name,Credit Score ve Compulsory gorur")
-    public void kullaniciLessonNameCreditScoreVeCompulsoryGorur() {
-     Assert.assertTrue(managamentOnSchoolsPageUs070809.lessonName.isDisplayed());
-     Assert.assertTrue(managamentOnSchoolsPageUs070809.compulsory.isDisplayed());
-     Assert.assertTrue(managamentOnSchoolsPageUs070809.creditScore.isDisplayed());
-    }
+
         @And("Kullanici Delete butonunu gorur ve tiklar")
     public void kullaniciDeleteButonunuGorurVeTiklar() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.scrollToElement(managamentOnSchoolsPageUs070809.deleteButonu).perform();
+
         Assert.assertTrue(managamentOnSchoolsPageUs070809.deleteButonu.isDisplayed());
         managamentOnSchoolsPageUs070809.deleteButonu.click();
+
+            String name = "Kullanıcı 'Lesson Deleted' mesajını görür";
+            ReusableMethods.tumSayfaResmi(name);
     }
 
     @And("Kullanici {string} mesajini gorur")
@@ -201,7 +227,9 @@ public class ManagementOnSchoolStepDefinitionUs07_08_09 {
 
     @And("Kullanici ders bilgilerini guncelle butonunu goremez ve ders bilgilerini guncelleyemez")
     public void kullaniciDersBilgileriniGuncelleButonunuGoremezVeDersBilgileriniGuncelleyemez() {
-
+        String name = "Kullanici ders bilgilerini guncelle butonunu goremez ve ders bilgilerini guncelleyemez";
+        ReusableMethods.tumSayfaResmi(name);
     }
+
 
 }

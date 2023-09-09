@@ -71,13 +71,13 @@ public class ManagamentOnSchoolsPageUs07_08_09 {
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]")
     public WebElement lessonNameResquiredMesaji;
 
-    @FindBy(xpath = "(//div[@class='invalid-feedback'])[6]")
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
     public WebElement creditScoreRequiredMesaji;
 
     @FindBy(xpath = "(//h5[@class='fw-bold p-3 card-header'])[1]")
     public WebElement lessonList;
 
-    @FindBy(xpath = "(//span[@aria-hidden='true'])[1]")
+    @FindBy(xpath = "(//a[@class='page-link'])[8]")
     public WebElement listeSonuButonu;
 
     @FindBy(xpath = "//th[text()='Lesson Name']")
@@ -89,10 +89,10 @@ public class ManagamentOnSchoolsPageUs07_08_09 {
     @FindBy(xpath = "//th[text()='Credit Score']")
     public WebElement creditScore;
 
-    @FindBy(xpath = "(//button[@class='btn btn-danger'])[1]")
+    @FindBy(xpath = "(//i[@class='fa-solid fa-trash'])[15]")
     public WebElement deleteButonu;
 
-    @FindBy(xpath = "//div[æclass='Toastify__toast-body']")
+    @FindBy(xpath = "//div[@role='alert']")
     public WebElement lessonDeletedMesaji;
 
 

@@ -20,7 +20,7 @@
 
       And Kullanici Lesson Name kutusuna "lessonName" yazar
       And  Kullanici 2 saniye bekler
-      And Kullanici Compulsory butonunu isaretler
+      And Kullanici Compulsory butonunu "isaretler"
       And  Kullanici 1 saniye bekler
       And Kullanici Credit Score butonuna "creditScore" yazar
       And  Kullanici 2 saniye bekler
@@ -31,10 +31,9 @@
 
 
     Scenario:TC_02_Lesson_Name_Required_Mesajini_Gorur
-
       And Kullanici Lesson Name kutusuna "" yazar
       And  Kullanici 1 saniye bekler
-      And Kullanici Compulsory butonunu bos birakir
+      And Kullanici Compulsory butonunu "isaretlemez"
       And  Kullanici 1 saniye bekler
       And Kullanici Credit Score butonuna "creditScore" yazar
       And  Kullanici 2 saniye bekler
@@ -48,7 +47,7 @@
     Scenario:TC_03_Credit_Score_Required_Mesajini_Gorur
       And Kullanici Lesson Name kutusuna "lessonName" yazar
       And  Kullanici 1 saniye bekler
-      And Kullanici Compulsory butonunu bos birakir
+      And Kullanici Compulsory butonunu "isaretlemez"
       And  Kullanici 1 saniye bekler
       And Kullanici Credit Score butonuna "" yazar
       And  Kullanici 2 saniye bekler

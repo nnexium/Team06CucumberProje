@@ -14,7 +14,8 @@ Scenario: TC_01_Vice_Dean_ders_listesini_görebilmeli_ve_güncellemeler_yapabilm
   And Kullanici sayfayi assagi kaydirip Lesson List i gorur
  And  Kullanici 2 saniye bekler
   And Kullanici Lesson Name,Credit Score ve Compulsory gorur
- And  Kullanici 2 saniye bekler
+ And  Kullanici 1 saniye bekler
+And Kullanici sayfayi assagi kaydirip >>butonuna tiklar
   And Kullanici Delete butonunu gorur ve tiklar
  And  Kullanici 2 saniye bekler
   And Kullanici "Lesson Deleted" mesajini gorur
