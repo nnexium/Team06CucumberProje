@@ -1,5 +1,8 @@
+@US02
 Feature: US02 Admin bilgileri görmeli ve silebilmeli
 
+
+@US02TC01
   Scenario: TC01 Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini görebilmeli
     Given Admin "managementonschoolsUrl" sayfasina gider
     When Admin Login Butonuna tıklar
@@ -9,7 +12,9 @@ Feature: US02 Admin bilgileri görmeli ve silebilmeli
     And Admin açılan pencerede menu butonuna tıklar
     And Admin Guest User'a tiklar
     Then Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini görünür olduğunu doğrular
+    And  sayfayi kapat
 
+  @US02TC02
   Scenario: TC02 Admin Guest User List bilgilerini silebilmeli
     Given Admin "managementonschoolsUrl" sayfasina gider
     When Admin Login Butonuna tıklar
@@ -18,5 +23,6 @@ Feature: US02 Admin bilgileri görmeli ve silebilmeli
     And Admin login butonuna tıklar
     And Admin açılan pencerede menu butonuna tıklar
     And Admin Guest User'a tiklar
-    And Admin silme işlemi için, Guest User List de, Name, Phone Number, SSN, User Name in olduğu tabloda "Çöp Kutusu" işaretini tıklar
-    Then Admin "Guest User Deleted Successfull" yazısının görünür olduğunu doğrular
+    And Admin silme işlemi için, Guest User List de, Name, Phone Number, SSN, User Name in olduğu tabloda Cöp Kutusu işaretini tıklar
+    Then Admin 'Guest User Deleted Successfull' yazısının görünür olduğunu doğrular
+    And sayfayi kapat

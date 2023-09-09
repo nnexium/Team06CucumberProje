@@ -13,8 +13,11 @@ import managementonschools.utilities.Driver;
 import managementonschools.utilities.ReusableMethods;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 
+import java.awt.*;
 import java.security.Key;
+import java.util.ArrayList;
 
 public class ManagementOnSchoolsStepDefinitionUs01_02 {
     Faker faker = new Faker();
@@ -125,17 +128,39 @@ public class ManagementOnSchoolsStepDefinitionUs01_02 {
 
     }
 
-    @And("Admin silme işlemi için, Guest User List de, Name, Phone Number, SSN, User Name in olduğu tabloda {string} işaretini tıklar")
-    public void adminSilmeIslemiIcinGuestUserListDeNamePhoneNumberSSNUserNameInOlduguTablodaIsaretiniTıklar(String arg0) {
+    @And("Admin silme işlemi için, Guest User List de, Name, Phone Number, SSN, User Name in olduğu tabloda Cöp Kutusu işaretini tıklar")
+    public void adminSilmeIslemiIcinGuestUserListDeNamePhoneNumberSSNUserNameInOlduguTablodaIsaretiniTıklar() {
+       String mng = Driver.getDriver().getWindowHandle();
+       Driver.getDriver().switchTo().newWindow(WindowType.TAB);
+       Driver.getDriver().get("https://managementonschools.com/register");
+      // pages0102.homePageRegisterButton.click();
+       pages0102.nameKutusu.sendKeys("AAAAAAAA",Keys.TAB,"aaaaaaa");
 
+        pages0102.birthPlaceKutusu.sendKeys(faker.nation().capitalCity());
+        pages0102.phoneNumberKutusu.sendKeys(faker.number().numberBetween(100, 999) + " " + faker.number().numberBetween(100, 999) + " " + faker.number().numberBetween(1000, 9999));
+        pages0102.maleButton.click();
+        pages0102.birthDayKutusu.sendKeys(faker.number().numberBetween(01, 28) + "." + faker.number().numberBetween(01, 12) + "." + faker.number().numberBetween(1950, 2004));
+        pages0102.ssnKutusu.sendKeys(faker.idNumber().ssnValid());
+        pages0102.usernameKutusu.sendKeys(faker.name().username());
+        pages0102.passwordKutusu.sendKeys(faker.internet().password()+"@Ak47!?");
+        ReusableMethods.bekle(2);
+        pages0102.registerButonu.submit();
+
+        Driver.getDriver().switchTo().window(mng);
+        Driver.getDriver().navigate().refresh();
+        Driver.getDriver().navigate().refresh();
+
+        pages0102.deleteButonu.click();
 
 
     }
 
 
 
-    @Then("Admin {string} yazısının görünür olduğunu doğrular")
-    public void adminYazısınınGorunurOldugunuDogrular(String arg0) {
+    @Then("Admin 'Guest User Deleted Successfull' yazısının görünür olduğunu doğrular")
+    public void adminYazısınınGorunurOldugunuDogrular() {
+
+        assert pages0102.verifyDelete.isDisplayed();
     }
 
 
