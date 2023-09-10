@@ -109,10 +109,6 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
 
     }
 
-    @Then("Admin User Name  ve Admin password bilgilerini gir")
-    public void adminUserNameVeAdminPasswordBilgileriniGir() {
-
-    }
     @Then("Sol tarafta açılan {string} kısmına tıklar")
     public void solTaraftaAcılanKısmınaTıklar(String arg0) {
         ReusableMethods.scroll(managementOnSchools.deanEnter);
@@ -126,9 +122,6 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
         managementOnSchools.nameEnter.sendKeys("Dean",Keys.TAB,"Team06",Keys.TAB,"San Diego");
     }
 
-    @Then(": Kullanıcı Surname {string} kısmına bilgileri yazar")
-    public void kullanıcıSurnameKısmınaBilgileriYazar(String arg0) {
-    }
 
     @Then(": Kullanıcı BirthPlace kısmına bilgileri yazar")
     public void kullanıcıBirthPlaceKısmınaBilgileriYazar() {
@@ -215,14 +208,5 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
         ReusableMethods.click(managementOnSchools.menuButton);
         ReusableMethods.bekle(4);
     }
-
-
-    }
-
-
-
-
-
-
-
-
+>>>>>>>>> Temporary merge branch 2
+}
