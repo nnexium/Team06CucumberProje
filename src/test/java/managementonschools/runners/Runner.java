@@ -12,11 +12,8 @@ import org.junit.runner.RunWith;
         "rerun:TestOutput/failed_scenario.txt"},
         features = "src/test/resources/features",     //features yolunu aldik
         glue = {"managementonschools/stepDefinition"},//source rootunu aldik
-<<<<<<<<< Temporary merge branch 1
-        tags = "@US01",
-=========
         tags = "@US04",
->>>>>>>>> Temporary merge branch 2
+
         dryRun = false,
         monochrome = false
 
