@@ -4,6 +4,7 @@ import managementonschools.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.ElementClickInterceptedException;
 
 public class ManagementOnSchoolsPageUs03_04 {
 
@@ -27,6 +28,7 @@ public class ManagementOnSchoolsPageUs03_04 {
     @FindBy(xpath = "//*[@placeholder='Name']")
     public WebElement yourName;
 
+
     @FindBy(xpath = "//*[@placeholder='Email']")
     public WebElement yourEmail;
 
@@ -49,23 +51,48 @@ public class ManagementOnSchoolsPageUs03_04 {
     @FindBy(xpath = "//*[@class='Toastify__toast-container Toastify__toast-container--top-center']")
     public WebElement assertSubject;
 
-    @FindBy(xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
+<<<<<<<<< Temporary merge branch 1
+    @FindBy(css = "//div[text()='Your subject should be at least 4 characters']")
+    public WebElement assertMessage;
+=========
+    @FindBy(xpath = "//*[@id=\"root\"]/div/header/div[1]/div/div/div/nav/button")
     public WebElement menuButton;
 
-    @FindBy(css = "(//*[@class='nav-link'])[6]")
-    public WebElement adminManagement;
+    @FindBy(xpath = "(//*[@class='nav-link'])[7]")//
+    public WebElement deanEnter;
 
-    @FindBy(css = "//*[@class='form-control is-invalid']")
-    public WebElement adminuser;
+    @FindBy(xpath = "//*[@id='username']")
+    public WebElement enter;
 
-    @FindBy(css = "//div[text()='Your subject should be at least 4 characters']")
-    public WebElement assertMessage3;
+    @FindBy(xpath = "//*[@id='name']")
+    public WebElement nameEnter;
 
-    @FindBy(css = "//div[text()='Your subject should be at least 4 characters']")
-    public WebElement assertMessage4;
+    @FindBy(xpath= "(//*[@type='radio'])[1]")
+    public WebElement femaleGender;
 
-    @FindBy(css = "//div[text()='Your subject should be at least 4 characters']")
-    public WebElement assertMessage5;
+    @FindBy(xpath= "(//*[@type='radio'])[2]")
+    public WebElement maleGender;
+
+    @FindBy(xpath= "(//*[@id='birthDay'])")
+    public WebElement birthDayselect;
+
+    @FindBy(xpath= "//*[@id='phoneNumber']")
+    public WebElement phoneNumber;
+
+    @FindBy(xpath= "//*[@id='ssn']")
+    public WebElement ssnNumber;
+
+    @FindBy(xpath= "//*[@id='username']")
+    public WebElement UserName;
+
+    @FindBy(xpath= "//*[@id='password']")
+    public WebElement password;
+
+    @FindBy(xpath= "//*[@class='fw-semibold btn btn-primary btn-lg']")
+    public WebElement submitButton;
+
+
+>>>>>>>>> Temporary merge branch 2
 
 
 
