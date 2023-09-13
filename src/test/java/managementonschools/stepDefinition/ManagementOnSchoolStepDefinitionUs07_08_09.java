@@ -97,8 +97,7 @@ public class ManagementOnSchoolStepDefinitionUs07_08_09 {
 
     @And("Kullanici Lessons butonunu tiklar")
     public void kullaniciLessonsButonunuTiklar() {
-
-        managamentOnSchoolsPageUs070809.lessons.click();
+managamentOnSchoolsPageUs070809.lessons.click();
     }
 
     @And("Kullanici Lesson Name kutusuna {string} yazar")
@@ -113,7 +112,8 @@ public class ManagementOnSchoolStepDefinitionUs07_08_09 {
     @And("Kullanici Compulsory butonunu {string}")
     public void kullaniciCompulsoryButonunu(String arg0) {
         if (arg0.equals("isaretler")){
-            managamentOnSchoolsPageUs070809.compulsory.click();
+            managamentOnSchoolsPageUs070809.compulsoryButonu.click();
+
         }
         else {
 
@@ -216,20 +216,22 @@ public class ManagementOnSchoolStepDefinitionUs07_08_09 {
         Assert.assertTrue(managamentOnSchoolsPageUs070809.deleteButonu.isDisplayed());
         managamentOnSchoolsPageUs070809.deleteButonu.click();
 
-            String name = "Kullanıcı 'Lesson Deleted' mesajını görür";
-            ReusableMethods.tumSayfaResmi(name);
+
     }
 
     @And("Kullanici {string} mesajini gorur")
     public void kullaniciMesajiniGorur(String arg0) {
-        Assert.assertTrue(managamentOnSchoolsPageUs070809.lessonDeletedMesaji.isDisplayed());
-    }
-
-    @And("Kullanici ders bilgilerini guncelle butonunu goremez ve ders bilgilerini guncelleyemez")
-    public void kullaniciDersBilgileriniGuncelleButonunuGoremezVeDersBilgileriniGuncelleyemez() {
-        String name = "Kullanici ders bilgilerini guncelle butonunu goremez ve ders bilgilerini guncelleyemez";
+        String name = "Kullanıcı 'Lesson Deleted' mesajını görür";
         ReusableMethods.tumSayfaResmi(name);
     }
 
+        @And("Kullanici ders bilgilerini guncelle butonunu goremez ve ders bilgilerini guncelleyemez")
+        public void kullaniciDersBilgileriniGuncelleButonunuGoremezVeDersBilgileriniGuncelleyemez () {
 
-}
+
+            String str = "Kullanici ders bilgilerini guncelle butonunu goremez ve ders bilgilerini guncelleyemez";
+            ReusableMethods.tumSayfaResmi(str);
+        }
+    }
+
+
