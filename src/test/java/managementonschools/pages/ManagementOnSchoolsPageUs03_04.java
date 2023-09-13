@@ -51,10 +51,10 @@ public class ManagementOnSchoolsPageUs03_04 {
     @FindBy(xpath = "//*[@class='Toastify__toast-container Toastify__toast-container--top-center']")
     public WebElement assertSubject;
 
-<<<<<<<<< Temporary merge branch 1
+
     @FindBy(css = "//div[text()='Your subject should be at least 4 characters']")
     public WebElement assertMessage;
-=========
+
     @FindBy(xpath = "//*[@id=\"root\"]/div/header/div[1]/div/div/div/nav/button")
     public WebElement menuButton;
 
@@ -92,7 +92,7 @@ public class ManagementOnSchoolsPageUs03_04 {
     public WebElement submitButton;
 
 
->>>>>>>>> Temporary merge branch 2
+
 
 
 
