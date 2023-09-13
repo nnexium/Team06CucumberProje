@@ -66,14 +66,14 @@ public class ManagementOnSchoolsStepDefinitionUs15_16_25 {
         System.out.println("password = " + password);
     }
 
-    @But("kullanici {int} saniye bekler")
-    public void kullaniciIntSaniyeBekler(int sayi) {
-        try {
-            Thread.sleep(sayi*1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
+   @But("kullanici {int} saniye bekler")
+   public void kullaniciIntSaniyeBekler(int sayi) {
+       try {
+           Thread.sleep(sayi*1000);
+       } catch (InterruptedException e) {
+           throw new RuntimeException(e);
+       }
+   }
 
     @And("gender bolumunden cinsiyet sec")
     public void genderBolumundenCinsiyetSec() {
