@@ -31,11 +31,11 @@ public class ManagementOnSchoolsStepDefinitionUs05_06_23 {
         pageUs05_06_23.username.sendKeys("Team06Admin", Keys.TAB, "Team06Admin", Keys.TAB, Keys.ENTER);
     }
 
-    @And("kullanici {int} saniye bekler")
-    public void kullaniciSaniyeBekler(int arg0) {
-        ReusableMethods.bekle(2);
+  // @And("kullanici {int} saniye bekler")
+  // public void kullaniciSaniyeBekler(int arg0) {
+  //     ReusableMethods.bekle(2);
 
-    }
+  // }
 
     @And("kullanici sayfadaki Menu butonuna tiklar")
     public void kullaniciSayfadakiMenuButonunaTiklar() {
@@ -59,8 +59,7 @@ public class ManagementOnSchoolsStepDefinitionUs05_06_23 {
     }
 
     @And("kullanici sayfayi kapatir")
-    public void kullaniciSayfayiKapatir() {
-        Driver.closeDriver();
+    public void kullaniciSayfayiKapatir() {  Driver.closeDriver();
     }
 
     //***********************************************************************************
