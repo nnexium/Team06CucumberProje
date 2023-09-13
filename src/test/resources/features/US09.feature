@@ -19,7 +19,7 @@ And Kullanici sayfayi assagi kaydirip >>butonuna tiklar
   And Kullanici Delete butonunu gorur ve tiklar
  And  Kullanici 2 saniye bekler
   And Kullanici "Lesson Deleted" mesajini gorur
- And  Kullanici 2 saniye bekler
+ And  Kullanici 1 saniye bekler
   And Kullanici ders bilgilerini guncelle butonunu goremez ve ders bilgilerini guncelleyemez
  And Kullanici sayfayi kapatir
 

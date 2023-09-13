@@ -92,7 +92,7 @@ public class ManagamentOnSchoolsPageUs07_08_09 {
     @FindBy(xpath = "(//i[@class='fa-solid fa-trash'])[15]")
     public WebElement deleteButonu;
 
-    @FindBy(xpath = "//div[@role='alert']")
+    @FindBy(xpath = "//div[@role='progressbar']")
     public WebElement lessonDeletedMesaji;
 
 
