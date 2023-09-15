@@ -1,4 +1,4 @@
-package managementonschools.stepDefinition;
+package managementonschools.hooks;
 
 
 import io.cucumber.java.After;
@@ -8,9 +8,16 @@ import managementonschools.utilities.Driver;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import static managementonschools.base_urls.BaseUrl.*;
+
 public class Hooks {
     @Before
     public void setUp() throws Exception {
+        setUpAdmin();
+        setUpDean();
+        setUpViceDean();
+        setUpTeacher();
+        setUpStudent();
         System.out.println("Scenariolar calismaya basladi");
     }
 
