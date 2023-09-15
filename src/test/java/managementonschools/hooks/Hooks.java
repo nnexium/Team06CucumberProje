@@ -1,4 +1,4 @@
-package managementonschools.stepDefinition;
+package managementonschools.hooks;
 
 
 import io.cucumber.java.After;
@@ -8,13 +8,20 @@ import managementonschools.utilities.Driver;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import static managementonschools.base_urls.BaseUrl.*;
+
 public class Hooks {
     @Before
     public void setUp() throws Exception {
+        setUpAdmin();
+        setUpDean();
+        setUpViceDean();
+        setUpTeacher();
+        setUpStudent();
         System.out.println("Scenariolar calismaya basladi");
     }
 
-  //  @After
+    @After
     public void tearDown(Scenario scenario) throws Exception {
         if (scenario.isFailed()) {
             TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
