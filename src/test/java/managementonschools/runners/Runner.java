@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         "rerun:TestOutput/failed_scenario.txt"},
         features = "src/test/resources/features",     //features yolunu aldik
         glue = {"managementonschools/stepDefinition"},//source rootunu aldik
-        tags = "@US04",
+        tags = "@US03",
 
         dryRun = false,
         monochrome = false

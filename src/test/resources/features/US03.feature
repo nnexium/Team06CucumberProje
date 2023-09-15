@@ -1,6 +1,5 @@
 @US03
-Feature: US03 Managementshcool Sayfasi Testi
-
+ Feature: US03 Managementshcool Sayfasi Testi
   Scenario: TC01 Kullanıcı login olma
     Given : kullanici managementonschool sayfasina gider
     Then Login butonuna tıklar
