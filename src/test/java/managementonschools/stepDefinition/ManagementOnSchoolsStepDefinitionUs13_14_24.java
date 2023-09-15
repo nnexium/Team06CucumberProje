@@ -249,4 +249,5 @@ public class ManagementOnSchoolsStepDefinitionUs13_14_24 {
     public void bilgilerinGuncellendiginiDogrula() {
         Assert.assertEquals("Teacher updated Successful",managementOnSchoolsPage.teacherGuncelleme.getText());
     }
+    //jkhsgjkfgkll;sf
 }
