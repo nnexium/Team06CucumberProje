@@ -1,12 +1,15 @@
 package managementonschools.pages;
 
 import managementonschools.utilities.Driver;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.ElementClickInterceptedException;
 
 public class ManagementOnSchoolsPageUs03_04 {
+
+
 
 
     public ManagementOnSchoolsPageUs03_04() {
@@ -87,6 +90,12 @@ public class ManagementOnSchoolsPageUs03_04 {
 
     @FindBy(xpath= "//*[@id='password']")
     public WebElement password;
+
+    @FindBy(xpath= "//*[@id='birthPlace']")
+    public WebElement birthPlace;
+
+    @FindBy(xpath= "//*[@id='surname']")
+    public WebElement surname;
 
     @FindBy(xpath= "//*[@class='fw-semibold btn btn-primary btn-lg']")
     public WebElement submitButton;

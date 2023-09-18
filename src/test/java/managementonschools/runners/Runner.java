@@ -11,10 +11,8 @@ import org.junit.runner.RunWith;
         "junit:target/xml-report/cucumber.xml",
         "rerun:TestOutput/failed_scenario.txt"},
         features = "src/test/resources/features",     //features yolunu aldik
-        glue = {"managementonschools/stepDefinition"},//source rootunu aldik
-
-        tags = "@US03",
-
+        glue = {"managementonschools/stepDefinition","managementonschools/hooks"},//source rootunu aldik
+        tags = "@apitesti",
         dryRun = false,
         monochrome = false
 
