@@ -89,7 +89,7 @@ public class ManagamentOnSchoolsPageUs07_08_09 {
     @FindBy(xpath = "//th[text()='Credit Score']")
     public WebElement creditScore;
 
-    @FindBy(xpath = "(//i[@class='fa-solid fa-trash'])[15]")
+    @FindBy(xpath = "(//i[@class='fa-solid fa-trash'])[1]")
     public WebElement deleteButonu;
 
     @FindBy(xpath = "//div[@role='progressbar']")

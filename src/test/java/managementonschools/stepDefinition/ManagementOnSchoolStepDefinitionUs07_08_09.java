@@ -212,8 +212,8 @@ managamentOnSchoolsPageUs070809.lessons.click();
     public void kullaniciDeleteButonunuGorurVeTiklar() {
         Actions actions = new Actions(Driver.getDriver());
         actions.scrollToElement(managamentOnSchoolsPageUs070809.deleteButonu).perform();
-
         Assert.assertTrue(managamentOnSchoolsPageUs070809.deleteButonu.isDisplayed());
+
         managamentOnSchoolsPageUs070809.deleteButonu.click();
 
 
@@ -221,6 +221,7 @@ managamentOnSchoolsPageUs070809.lessons.click();
 
     @And("Kullanici {string} mesajini gorur")
     public void kullaniciMesajiniGorur(String arg0) {
+
         String name = "Kullanıcı 'Lesson Deleted' mesajını görür";
         ReusableMethods.tumSayfaResmi(name);
     }
