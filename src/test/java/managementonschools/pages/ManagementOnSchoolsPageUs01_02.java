@@ -75,6 +75,18 @@ public class ManagementOnSchoolsPageUs01_02 {
     @FindBy(xpath = "//th")
     public WebElement verifyListTitle;
 
+    @FindBy(xpath = "(//button)[5]")
+    public WebElement deleteButonu;
+
+    @FindBy(xpath = "//.[text()='Guest User deleted Successful']")
+    public WebElement verifyDelete;
+
+
+
+
+
+
+
 
 
 

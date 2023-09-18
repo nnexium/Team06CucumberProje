@@ -26,10 +26,13 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
     @Then("Login butonuna tıklar")
     public void loginButonunaTıklar() {
         managementOnSchools.login.click();
-        ReusableMethods.bekle(3);   }
+        ReusableMethods.bekle(3);
+    }
+
     @Then("Password bilgilerini gir")
     public void passwordBilgileriniGir() {
     }
+
     @Then("Navbar da bulunan Contact kısmına tıklar")
     public void navbarDaBulunanContactKısmınaTıklar() {
         managementOnSchools.contactbutton.click();
@@ -90,7 +93,7 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
 
     @And(": Sayfayı kapatır")
     public void sayfayıKapatır() {
-       // Driver.closeDriver();
+        // Driver.closeDriver();
     }
 
     @Then(": {string} yazısının Your Email kısmı için görüldüğünü doğrula.")
@@ -103,16 +106,12 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
     @Then(": {string} yazısının her iki kısım için görüldüğünü doğrula.")
     public void yazısınınHerIkiKısımIcinGoruldugunuDogrula(String string) {
         Assert.assertTrue(managementOnSchools.assertSubject.isDisplayed());
-       // ReusableMethods.bekle(2);
-       // Assert.assertTrue(managementOnSchools.assertMessage.isDisplayed());
-       // ReusableMethods.bekle(2);
+        // ReusableMethods.bekle(2);
+        // Assert.assertTrue(managementOnSchools.assertMessage.isDisplayed());
+        // ReusableMethods.bekle(2);
 
     }
 
-    @Then("Admin User Name  ve Admin password bilgilerini gir")
-    public void adminUserNameVeAdminPasswordBilgileriniGir() {
-
-    }
     @Then("Sol tarafta açılan {string} kısmına tıklar")
     public void solTaraftaAcılanKısmınaTıklar(String arg0) {
         ReusableMethods.scroll(managementOnSchools.deanEnter);
@@ -123,12 +122,9 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
 
     @Given(": Kullanıcı Name {string} kısmına bilgileri yazar")
     public void kullanıcıNameKısmınaBilgileriYazar(String arg0) {
-        managementOnSchools.nameEnter.sendKeys("Dean",Keys.TAB,"Team06",Keys.TAB,"San Diego");
+        managementOnSchools.nameEnter.sendKeys("Dean", Keys.TAB, "Team06", Keys.TAB, "San Diego");
     }
 
-    @Then(": Kullanıcı Surname {string} kısmına bilgileri yazar")
-    public void kullanıcıSurnameKısmınaBilgileriYazar(String arg0) {
-    }
 
     @Then(": Kullanıcı BirthPlace kısmına bilgileri yazar")
     public void kullanıcıBirthPlaceKısmınaBilgileriYazar() {
@@ -205,9 +201,10 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
         Assert.assertTrue(managementOnSchools.assertEmail.isDisplayed());
 
     }
+
     @Then("kullanıcı bilgileri gir")
     public void kullanıcıBilgileriGir() {
-        managementOnSchools.enter.sendKeys("Team06Admin",Keys.TAB,"Team06Admin");
+        managementOnSchools.enter.sendKeys("Team06Admin", Keys.TAB, "Team06Admin");
     }
 
     @But("Menu Butonuna Tıkla")
@@ -215,8 +212,5 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
         ReusableMethods.click(managementOnSchools.menuButton);
         ReusableMethods.bekle(4);
     }
-
-
-    }
-
+}
 

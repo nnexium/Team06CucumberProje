@@ -169,6 +169,10 @@ public class ReusableMethods {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].value='" + text + "'", element);
     }
+    public static WebElement waitForVisibility(By locator, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
 
     //JS SendAttributeValue
     public static void sendAttributeJS(WebElement element, String text) {
@@ -202,4 +206,5 @@ public class ReusableMethods {
 
         }
     }
+
 }
