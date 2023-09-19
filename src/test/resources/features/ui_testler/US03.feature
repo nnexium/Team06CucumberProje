@@ -33,7 +33,7 @@
     Then : Kullanıcı Mesage "<Message>" kısmına bilgileri yazar
     Then : Kullanıcı Send Mesaj Buttonuna tıklar
     Then : "Contact Message Created Successfully" yazısının görüldüğünü doğrula.
-    And  : Sayfayı kapatır1
+    And  : Sayfayı kapatır
     Examples:
       | Your Name | Your Email        | Subject | Message                |
       | Team06    | Team06@team06.com | Team06  | Bu Proje Harika Dostum |
@@ -52,7 +52,7 @@
     Then : Kullanıcı Mesage "<Message>" kısmına bilgileri yazar
     Then : Kullanıcı Send Mesaj Buttonuna tıklar
     Then : "Your Subject Should Be at least 4 characters" yazısının her iki kısım için görüldüğünü doğrula.
-    And  : Sayfayı kapatır1
+    And  : Sayfayı kapatır
     Examples:
       | Your Name | Your Email        | Subject | Message |
       | Team06    | Team06@team06.com | Te      | Bu      |
