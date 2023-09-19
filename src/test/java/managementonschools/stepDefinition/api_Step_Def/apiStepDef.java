@@ -1,4 +1,4 @@
-package managementonschools.stepDefinition;
+package managementonschools.stepDefinition.api_Step_Def;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,7 +8,7 @@ import managementonschools.pojos.us_03_04.us04.DeanPostPojo;
 import managementonschools.pojos.us_03_04.us04.ResponsePojo;
 
 import static io.restassured.RestAssured.given;
-import static managementonschools.base_urls.BaseUrl.spec;
+import static managementonschools.base_urls.BaseUrl.specAdmin;
 import static org.junit.Assert.assertEquals;
 
 public class apiStepDef {
@@ -21,7 +21,7 @@ public class apiStepDef {
     @Given("Dean eklemek icin Post request hazirligi yapilir")
     public void dean_eklemek_icin_post_request_hazirligi_yapilir() {
         // Set the URL
-        spec.pathParams("first", "dean", "second", "save");
+        specAdmin.pathParams("first", "dean", "second", "save");
     }
     @Given("Gonderilecek dean bilgileri hazirlanir")
     public void gonderilecek_dean_bilgileri_hazirlanir() {
@@ -31,7 +31,7 @@ public class apiStepDef {
     @When("Dean eklemek icin Post request gonderilir")
     public void dean_eklemek_icin_post_request_gonderilir() {
         // Send the request and get the response
-        response = given(spec).body(expectedData).when().post("{first}/{second}");
+        response = given(specAdmin).body(expectedData).when().post("{first}/{second}");
         actualData = response.as(ResponsePojo.class);
 
     }

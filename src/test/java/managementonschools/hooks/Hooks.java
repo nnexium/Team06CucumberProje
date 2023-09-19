@@ -12,7 +12,7 @@ import static managementonschools.base_urls.BaseUrl.*;
 
 public class Hooks {
     @Before
-    public void setUp() throws Exception {
+    public void setUp(){
         setUpAdmin();
         //setUpDean();
         //setUpViceDean();

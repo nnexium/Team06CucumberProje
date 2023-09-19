@@ -1,4 +1,4 @@
-package managementonschools.stepDefinition;
+package managementonschools.stepDefinition.ui_Step_Def;
 
 import io.cucumber.java.en.*;
 import managementonschools.pages.ManagementOnSchoolsPageUs17_18;

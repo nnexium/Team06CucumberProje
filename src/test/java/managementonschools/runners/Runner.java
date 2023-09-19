@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         glue = {"managementonschools/stepDefinition","managementonschools/hooks"},//source rootunu aldik
         tags = "@apitesti",
         dryRun = false,
-        monochrome = false
+        monochrome = true
 
 )
 
