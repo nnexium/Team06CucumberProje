@@ -19,6 +19,8 @@ import java.util.List;
 
 public class ReusableMethods {
 
+
+
     //HARD WAIT METHOD
     public static void bekle(int saniye) {
         try {
@@ -201,5 +203,8 @@ public class ReusableMethods {
         }catch (Exception ignored){
 
         }
+    }
+
+    public void login(String string, String string2) {
     }
 }

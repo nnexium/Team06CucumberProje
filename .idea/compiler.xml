@@ -9,5 +9,6 @@
         <module name="Team06CucumberProje" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>

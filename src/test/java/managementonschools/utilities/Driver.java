@@ -24,7 +24,7 @@ public class Driver {
            Test seneryolarının daha az kod ile yazılmasına ve bakımının daha kolay yapılmasına
        olanak sağlayan yazılım test yöntemidir. TestNG ve Cucumber frameworklerinde POM kalıbı kullanılır.
      */
-    static WebDriver driver;
+    public static WebDriver driver;
 
     public static WebDriver getDriver() {
         /*
