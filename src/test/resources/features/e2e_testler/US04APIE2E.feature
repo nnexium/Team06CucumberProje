@@ -24,8 +24,8 @@ Feature: US04 Managementshcool Sayfasi Testi
     Then : Kullanıcı Başarı ile Dean kayıt edildiği mesajınının görüldüğünü doğrula
     And  : Sayfayı kapatır
     Examples:
-      | Name | Surname | User Name    | Phone        | SSN_no       | Password |
-      | Dean | Team    | DeanTeam0606 | 538-528-3344 | 538-532-3284 | Team0612 |
+      | Name | Surname | User Name  | Phone        | SSN_no      | Password |
+      | Dean | Team    | DeanTeam06 | 538-528-3344 | 123-55-5666 | Team0612 |
 
   @US04
   Scenario: TC02 Kullanıcı login olma

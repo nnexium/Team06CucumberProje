@@ -16,11 +16,11 @@ public class ManagementOnSchoolsStepDefinitionUs19_20 extends ReusableMethods {
 
     ManagementOnSchoolsPageUs19_20 managementOnSchoolsPageUS19_20 = new ManagementOnSchoolsPageUs19_20();
 
-    @Given("kullanici ana sayfaya gider")
-    public void kullaniciAnaSayfayaGider() {
-        Driver.getDriver().get(ConfigReader.getProperty("managementonschoolsUrl"));
+  // @Given("kullanici ana sayfaya gider")
+  // public void kullaniciAnaSayfayaGider() {
+  //     Driver.getDriver().get(ConfigReader.getProperty("managementonschoolsUrl"));
 
-    }
+  // }
 
 
     @Then("kullanici login butonuna tiklar")

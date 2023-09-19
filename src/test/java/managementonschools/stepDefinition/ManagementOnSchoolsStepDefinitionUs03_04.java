@@ -1,19 +1,26 @@
 package managementonschools.stepDefinition;
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.But;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
+import io.cucumber.java.en.*;
+import io.restassured.response.Response;
 import managementonschools.pages.ManagementOnSchoolsPageUs03_04;
 
+import managementonschools.pojos.us_03_04.DeanPostPojo;
+import managementonschools.pojos.us_03_04.ResponsePojo;
 import managementonschools.utilities.ConfigReader;
 import managementonschools.utilities.Driver;
 import managementonschools.utilities.ReusableMethods;
-import org.apache.poi.ss.formula.functions.T;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
+import static io.restassured.RestAssured.given;
+import static managementonschools.base_urls.BaseUrl.spec;
+import static org.junit.Assert.assertEquals;
+
 public class ManagementOnSchoolsStepDefinitionUs03_04 {
+
+    DeanPostPojo expectedData;
+    Response response;
+    ResponsePojo actualData;
 
     ManagementOnSchoolsPageUs03_04 managementOnSchools = new ManagementOnSchoolsPageUs03_04();
 
@@ -93,7 +100,7 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
 
     @And(": Sayfayı kapatır")
     public void sayfayıKapatır() {
-        // Driver.closeDriver();
+         Driver.closeDriver();
     }
 
     @Then(": {string} yazısının Your Email kısmı için görüldüğünü doğrula.")
@@ -106,7 +113,7 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
     @Then(": {string} yazısının her iki kısım için görüldüğünü doğrula.")
     public void yazısınınHerIkiKısımIcinGoruldugunuDogrula(String string) {
         Assert.assertTrue(managementOnSchools.assertSubject.isDisplayed());
-        // ReusableMethods.bekle(2);
+        ReusableMethods.bekle(2);
         // Assert.assertTrue(managementOnSchools.assertMessage.isDisplayed());
         // ReusableMethods.bekle(2);
 
@@ -121,14 +128,14 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
     }
 
     @Given(": Kullanıcı Name {string} kısmına bilgileri yazar")
-    public void kullanıcıNameKısmınaBilgileriYazar(String arg0) {
-        managementOnSchools.nameEnter.sendKeys("Dean", Keys.TAB, "Team06", Keys.TAB, "San Diego");
+    public void kullanıcıNameKısmınaBilgileriYazar(String string) {
+        managementOnSchools.nameEnter.sendKeys(string);
     }
 
 
     @Then(": Kullanıcı BirthPlace kısmına bilgileri yazar")
     public void kullanıcıBirthPlaceKısmınaBilgileriYazar() {
-
+        managementOnSchools.birthPlace.sendKeys("San Diego");
 
     }
 
@@ -148,19 +155,19 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
 
     @Then(": Kullanıcı Doğum Tarihi seçer")
     public void kullanıcıDogumTarihiSecer() {
-        managementOnSchools.birthDayselect.sendKeys("22022008");
+        managementOnSchools.birthDayselect.sendKeys("1984-08-05");
         ReusableMethods.bekle(1);
     }
 
     @Then(": Kullanıcı Phone {string} bilglerini yazar")
-    public void kullanıcıPhoneBilgleriniYazar(String arg0) {
-        managementOnSchools.phoneNumber.sendKeys("538-528-3344");
+    public void kullanıcıPhoneBilgleriniYazar(String Phone) {
+        managementOnSchools.phoneNumber.sendKeys(Phone);
         ReusableMethods.bekle(2);
     }
 
     @Then(": Kullanıcı SSN no {string} bilgilerini yazar")
-    public void kullanıcıSSNNoBilgileriniYazar(String arg0) {
-        managementOnSchools.ssnNumber.sendKeys("123-55-5666");
+    public void kullanıcıSSNNoBilgileriniYazar(String SSN_no) {
+        managementOnSchools.ssnNumber.sendKeys(SSN_no);
         ReusableMethods.bekle(1);
     }
 
@@ -185,15 +192,15 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
         Assert.assertTrue(managementOnSchools.assertEmail.isDisplayed());
     }
 
-    @Then(": Kullanıcı Phone {string} bilglerini rakamlar arasında {string} işareti olmadan yazar")
-    public void kullanıcıPhoneBilgleriniRakamlarArasındaIsaretiOlmadanYazar(String arg0) {
-        managementOnSchools.phoneNumber.sendKeys("538-528-3344");
+    @Then(": Kullanıcı Phone {string} bilglerini rakamlar arasında - işareti olmadan yazar")
+    public void kullanıcıPhoneBilgleriniRakamlarArasındaIsaretiOlmadanYazar(String Phone) {
+        managementOnSchools.phoneNumber.sendKeys(Phone);
         ReusableMethods.bekle(2);
     }
 
-    @Then(": Kullanıcı SSN no {string} bilglerini rakamlar arasında {string} işareti olmadan yazar")
-    public void kullanıcıSSNNoBilgleriniRakamlarArasındaIsaretiOlmadanYazar(String arg0) {
-        managementOnSchools.ssnNumber.sendKeys("123-55--566");
+    @Then(": Kullanıcı SSN no {string} bilglerini rakamlar arasında - işareti olmadan yazar")
+    public void kullanıcıSSNNoBilgleriniRakamlarArasındaIsaretiOlmadanYazar(String SSN_no) {
+
     }
 
     @Then(": Kullanıcı çıkan hata mesajının göründüğünü doğrula")
@@ -212,5 +219,24 @@ public class ManagementOnSchoolsStepDefinitionUs03_04 {
         ReusableMethods.click(managementOnSchools.menuButton);
         ReusableMethods.bekle(4);
     }
+
+    @Then(": Kullanıcı Surname {string} kısmına bilgileri yazar")
+    public void kullanıcıSurnameKısmınaBilgileriYazar(String string) {
+        managementOnSchools.surname.sendKeys(string);
+
+    }
+
+    @Then(": Kullanıcı SSN no {string} bilglerini rakamlar arasında - tırnak işareti olmadan yazar")
+    public void kullanıcıSSNNoBilgleriniRakamlarArasındaTırnakIsaretiOlmadanYazar(String SSN_no) {
+        managementOnSchools.ssnNumber.sendKeys(SSN_no);
+    }
+
 }
 
+/*
+{
+  "1984-08-05","San Diego","MALE","Dean","Team0612","538-528-3284","538-52-3284","Team","DeanTeam0606"
+}
+
+
+ */

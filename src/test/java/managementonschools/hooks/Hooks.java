@@ -14,10 +14,10 @@ public class Hooks {
     @Before
     public void setUp() throws Exception {
         setUpAdmin();
-        setUpDean();
-        setUpViceDean();
-        setUpTeacher();
-        setUpStudent();
+        //setUpDean();
+        //setUpViceDean();
+        //setUpTeacher();
+        //setUpStudent();
         System.out.println("Scenariolar calismaya basladi");
     }
 
