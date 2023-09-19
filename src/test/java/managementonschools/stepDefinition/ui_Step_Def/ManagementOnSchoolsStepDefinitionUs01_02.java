@@ -1,4 +1,4 @@
-package managementonschools.stepDefinition;
+package managementonschools.stepDefinition.ui_Step_Def;
 
 import com.github.javafaker.DateAndTime;
 import com.github.javafaker.Faker;

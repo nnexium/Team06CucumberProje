@@ -1,5 +1,5 @@
 
-package managementonschools.stepDefinition;
+package managementonschools.stepDefinition.ui_Step_Def;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

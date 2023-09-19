@@ -1,5 +1,3 @@
-eature: Students, choose lesson, grades and announcement
-
 @US21
 Scenario: Students, choose lesson, grades and announcement girebilmeli
 Given kullanici ana sayfaya gider
@@ -26,5 +24,6 @@ And Doğum tarihi girilmelidir. Boş bırakılamaz.
 And Telefon numarası girilmelidir. Boş bırakılamaz.
 And SSN girilmelidir.  SSN; 3. ve 5. rakamdan sonra "-" içermeli ve 9 rakamdan oluşmalıdır. Boş bırakılamaz.
 And Password girilmelidir. Password en az 8 karakterden oluşmalıdır.
+
 
 

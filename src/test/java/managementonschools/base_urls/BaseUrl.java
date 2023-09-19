@@ -8,37 +8,41 @@ import static managementonschools.utilities.Authentication.*;
 
 
 public class BaseUrl {
-    public static RequestSpecification spec;
+    public static RequestSpecification specAdmin;
+    public static RequestSpecification specDean;
+    public static RequestSpecification specViceDean;
+    public static RequestSpecification specTeacher;
+    public static RequestSpecification specStudent;
     public static void setUpAdmin(){
-        spec = new RequestSpecBuilder()
+        specAdmin = new RequestSpecBuilder()
                 .setBaseUri("https://managementonschools.com/app")
                 .addHeader("Authorization", generateTokenAdmin())
                 .setContentType(ContentType.JSON)
                 .build();
     }
     public static void setUpDean(){
-        spec = new RequestSpecBuilder()
+        specDean = new RequestSpecBuilder()
                 .setBaseUri("https://managementonschools.com/app")
                 .addHeader("Authorization", generateTokenDean())
                 .setContentType(ContentType.JSON)
                 .build();
     }
     public static void setUpViceDean(){
-        spec = new RequestSpecBuilder()
+        specViceDean = new RequestSpecBuilder()
                 .setBaseUri("https://managementonschools.com/app")
                 .addHeader("Authorization", generateTokenViceDean())
                 .setContentType(ContentType.JSON)
                 .build();
     }
     public static void setUpTeacher(){
-        spec = new RequestSpecBuilder()
+        specTeacher = new RequestSpecBuilder()
                 .setBaseUri("https://managementonschools.com/app")
                 .addHeader("Authorization", generateTokenTeacher())
                 .setContentType(ContentType.JSON)
                 .build();
     }
     public static void setUpStudent(){
-        spec = new RequestSpecBuilder()
+        specStudent = new RequestSpecBuilder()
                 .setBaseUri("https://managementonschools.com/app")
                 .addHeader("Authorization", generateTokenStudent())
                 .setContentType(ContentType.JSON)
