@@ -1,12 +1,11 @@
 package managementonschools.stepDefinition;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import managementonschools.pojos.us_03_04.DeanPostPojo;
-import managementonschools.pojos.us_03_04.ResponsePojo;
+import managementonschools.pojos.us_03_04.us04.DeanPostPojo;
+import managementonschools.pojos.us_03_04.us04.ResponsePojo;
 
 import static io.restassured.RestAssured.given;
 import static managementonschools.base_urls.BaseUrl.spec;

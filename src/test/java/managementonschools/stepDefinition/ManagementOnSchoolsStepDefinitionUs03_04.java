@@ -4,8 +4,8 @@ import io.cucumber.java.en.*;
 import io.restassured.response.Response;
 import managementonschools.pages.ManagementOnSchoolsPageUs03_04;
 
-import managementonschools.pojos.us_03_04.DeanPostPojo;
-import managementonschools.pojos.us_03_04.ResponsePojo;
+import managementonschools.pojos.us_03_04.us04.DeanPostPojo;
+import managementonschools.pojos.us_03_04.us04.ResponsePojo;
 import managementonschools.utilities.ConfigReader;
 import managementonschools.utilities.Driver;
 import managementonschools.utilities.ReusableMethods;
@@ -13,7 +13,6 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
 import static io.restassured.RestAssured.given;
-import static managementonschools.base_urls.BaseUrl.spec;
 import static org.junit.Assert.assertEquals;
 
 public class ManagementOnSchoolsStepDefinitionUs03_04 {

@@ -1,8 +1,8 @@
-package managementonschools.pojos.us_03_04;
+package managementonschools.pojos.us_03_04.us04;
 
 import java.io.Serializable;
 
-public class ObjectPojo implements Serializable {
+public class ObjectPojoDean implements Serializable {
 	private int userId;
 	private String username;
 	private String name;
@@ -13,10 +13,10 @@ public class ObjectPojo implements Serializable {
 	private String phoneNumber;
 	private String gender;
 
-	public ObjectPojo() {
+	public ObjectPojoDean() {
 	}
 
-	public ObjectPojo(int userId, String username, String name, String surname, String birthDay, String ssn, String birthPlace, String phoneNumber, String gender) {
+	public ObjectPojoDean(int userId, String username, String name, String surname, String birthDay, String ssn, String birthPlace, String phoneNumber, String gender) {
 		this.userId = userId;
 		this.username = username;
 		this.name = name;
@@ -103,7 +103,7 @@ public class ObjectPojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"ObjectPojo{" + 
+			"ObjectPojoDean{" +
 			"userId = '" + userId + '\'' + 
 			",username = '" + username + '\'' + 
 			",name = '" + name + '\'' + 
