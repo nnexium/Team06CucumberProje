@@ -1,4 +1,4 @@
-package managementonschools.pojos.us_03_04;
+package managementonschools.pojos.us_03_04.us04;
 
 import java.io.Serializable;
 
