@@ -14,10 +14,10 @@ public class Hooks {
     @Before
     public void setUp(){
         setUpAdmin();
-        //setUpDean();
-        //setUpViceDean();
-        //setUpTeacher();
-        //setUpStudent();
+        setUpDean();
+        setUpViceDean();
+        setUpTeacher();
+        setUpStudent();
         System.out.println("Scenariolar calismaya basladi");
     }
 
@@ -29,6 +29,7 @@ public class Hooks {
             Driver.closeDriver();
         }
 
+        Driver.closeDriver();
 
     }
 
