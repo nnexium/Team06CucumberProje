@@ -11,7 +11,7 @@ import managementonschools.utilities.ReusableMethods;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class ManagementOnSchoolsStepDefinitionUs05_06_23 {
+ public class ManagementOnSchoolsStepDefinitionUs05_06_23 {
     ManagementOnSchoolsPageUs05_06_23 pageUs05_06_23 = new ManagementOnSchoolsPageUs05_06_23();
 
     @Given("kullanici anasayfaya giderr")
@@ -61,6 +61,8 @@ public class ManagementOnSchoolsStepDefinitionUs05_06_23 {
     @And("kullanici sayfayi kapatir")
     public void kullaniciSayfayiKapatir() {  Driver.closeDriver();
     }
+
+
 
     //***********************************************************************************
 
@@ -169,3 +171,6 @@ public class ManagementOnSchoolsStepDefinitionUs05_06_23 {
 
     //***********************************************************************************
 }
+
+
+

@@ -12,7 +12,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
 
-public class ManagementOnSchoolsStepDefinitionUs19_20 extends ReusableMethods {
+ public class ManagementOnSchoolsStepDefinitionUs19_20 extends ReusableMethods {
 
     ManagementOnSchoolsPageUs19_20 managementOnSchoolsPageUS19_20 = new ManagementOnSchoolsPageUs19_20();
 
@@ -67,10 +67,12 @@ public class ManagementOnSchoolsStepDefinitionUs19_20 extends ReusableMethods {
     }
 
 
-    @And("kullanici {int} saniye bekler")
+     @And("kullanici {int} saniye bekler")
     public void kullaniciSaniyeBekler(int i) {
         ReusableMethods.bekle(2);
     }
+
+
 
 
 
@@ -235,8 +237,12 @@ public class ManagementOnSchoolsStepDefinitionUs19_20 extends ReusableMethods {
 
     }
 
-    @And("kullanici sayfayi kapatir")
+   @And("kullanici sayfayi kapatir")
     public void kullaniciSayfayiKapatir() {
         Driver.closeDriver();
     }
+
 }
+
+
+
