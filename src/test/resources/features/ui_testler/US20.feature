@@ -1,28 +1,5 @@
 Feature: US20_Teacher_toplantıları_görebilmeli_güncelleyebilmeli_ve_silebilmeli
 
-  #17-Meet updated successfully yazının görüntülendiğini doğrula
-  #18-Edit Meet penceresinde Date Of Meet kısmındaki tarih kısmına tıkla
-  #19-Edit Meet penceresinde Date Of Meet kısmındaki tarih kısmına tıkla
-  #20-Date Of Meet kısmındaki tarih kısmınıda ki ileri bir tarihe değiştir
-  #21-Submit butonuna tıkla
-  #22-Meet updated successfully yazının görüntülendiğini doğrula
-  #23-Start Time kısmına tıkla
-  #24-Start Time kısmındaki saati değiştir
-  #25-Start Time  kısmındaki  saat kısmındaki  saati değiştir
-  #26-Submit butonuna tıkla
-  #27-Ekranın üst kısmında hata mesajı çıktığını doğrula
-  #28-Stop Time kısmına tıkla
-  #29-Stop Time kısmındaki saati değiştir
-  #30-Submit butonuna tıkla
-  #31-Ekranın üst kısmında hata mesajı çıktığını doğrula
-  #32-Description  kısmına tıkla
-  #33-Description kısmındaki Açıklamayı sil
-  #34-Description  kısmına  yeni açıklama gir
-  #35-Submit butonuna tıkla
-  #36-Meet updated successfully yazının görüntülendiğini doğrula
-  #37-Edit Meet penceresini kapatmak için sağ üstteki X ' e tıkla
-  #38-Meet List taplosunda eklenen meet'i silmek için sağ tarafda bulunan kırmızı çöp kutusuna tıkla
-  #39-Meet deleted successfully yazısının görüntülendiğini doğrula
   @US20
   Scenario: US20_Teacher_toplantıları_görebilmeli_güncelleyebilmeli_ve_silebilmeli
     Given kullanici ana sayfaya gider
